@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Bite❤️🍽️</title>
+  <style>
+    /* ==== Reset & Global Styles ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #fefefe;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    /* ==== Navbar ==== */
+    header {
+      background: #E5989B;
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #6b1134;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo span {
+      background: #fff;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 50%;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      padding: 6px 12px;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: #9F5255;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ==== Hero Section ==== */
+    .hero {
+      background: linear-gradient(to right, #fff6f0, #fff);
+      padding: 70px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: #333;
+    }
+
+    .hero-text p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #E5989B;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #9F5255;
+      transform: scale(1.05);
+    }
+
+    .hero-img {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-img img {
+      max-width: 90%;
+      border-radius: 16px;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .hero-img img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ==== About Section ==== */
+    .about {
+      padding: 60px 8%;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: #6b1134;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      color: #555;
+    }
+
+    /* ==== How it Works ==== */
+    .how {
+      padding: 60px 8%;
+      background: #E5989B;
+      text-align: center;
+    }
+
+    .how h2 {
+      color: #6b1134;
+      margin-bottom: 30px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .step img {
+      margin-bottom: 15px;
+    }
+
+    /* ==== Safety Guidelines ==== */
+    .safety {
+      padding: 60px 8%;
+      background: #fff6f6;
+      text-align: center;
+    }
+
+    .safety h2 {
+      color: #6b1134;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .safety ul {
+      max-width: 700px;
+      margin: 20px auto;
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    .safety ul li {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+      color: #444;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .safety ul li::before {
+      content: "✔";
+      color: #E5989B;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* ==== Contact Section ==== */
+    .contact {
+      padding: 60px 8%;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #6b1134;
+      margin-bottom: 20px;
+    }
+
+    .contact img {
+      margin-bottom: 20px;
+      border-radius: 16px;
+    }
+
+    .contact form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+      border: 1px solid #ff7b54;
+    }
+
+    /* ==== Footer ==== */
+    footer {
+      background: #E5989B;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #6b1134;
+      margin-top: 40px;
+    }
+
+    /* ==== Responsive Media Queries ==== */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      nav ul {
+        gap: 10px;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 1.6rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .btn {
+        padding: 10px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==== Header / Navbar ==== -->
+  <header>
+    <div class="logo">
+      <span>🍴</span> Share Bite
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#safety">Safety</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==== Hero Section ==== -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1>Share Food, Spread Smiles😊❤️</h1>
+      <p>Join us in fighting hunger by donating surplus food from homes and restaurants to those in need. Together, we
+        can reduce food waste and make a difference.</p>
+      <a href="#contact" class="btn">Donate Now</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1604908812581-3f88b7c80c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        alt="Food Donation">
+    </div>
+  </section>
+
+  <!-- ==== About Section ==== -->
+  <section class="about" id="about">
+    <h2>About Share Bite</h2>
+    <p>Share Bite 🍴 is a platform that connects food donors with people in need. Whether you have extra food at home,
+      restaurants, or events, you can share it with those who are hungry. Together, we build a community of kindness and
+      generosity.</p>
+  </section>
+
+  <!-- ==== How It Works ==== -->
+  <section class="how" id="how">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+          alt="Collect Food">
+        <h3>1. Collect</h3>
+        <p>Gather surplus food from homes, restaurants, or events.</p>
+      </div>
+      <div class="step">
+        <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+          alt="Share Food">
+        <h3>2. Share</h3>
+        <p>Use Share Bite 🍴 to register your donation easily.</p>
+      </div>
+      <div class="step">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+          alt="Deliver Food">
+        <h3>3. Deliver</h3>
+        <p>Our volunteers and NGOs help deliver food to people in need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== Safety Guidelines ==== -->
+  <section class="safety" id="safety">
+    <h2>Safety Guidelines</h2>
+    <ul>
+      <li>Donate only fresh food cooked within 24 hours.</li>
+      <li>Store food safely (chilled or hot) until pickup.</li>
+      <li>Label food clearly (veg/non-veg, allergens, preparation time).</li>
+      <li>Use clean and sealed containers.</li>
+    </ul>
+  </section>
+
+  <!-- ==== Contact Section ==== -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ==== Footer ==== -->
+  <footer>
+    <p>© 2025 Share Bite 🍴 | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
